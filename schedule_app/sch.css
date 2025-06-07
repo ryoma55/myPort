@@ -1,0 +1,102 @@
+header{
+    position: relative;
+    background-color: orange;
+}
+.tag{
+    
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+@media (min-width: 600px) {
+  .tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+.menu{
+    font-size: 30px;
+}
+a{
+    color: white;
+    font-weight: 500px;
+    font-size: 60px;
+}
+table{ 
+    table-layout: fixed;
+    width: 80%;
+    height: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+thead th:nth-child(1) {
+    width: 10%;
+    height: 5px;
+}
+
+thead th{
+    width: 15%;
+    height: 5px;
+    background-color:orange;
+}
+
+thead th td{
+    background-color:orange;
+}
+
+th, td {
+    padding: 20px;
+    font-size: 20px;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+td{
+    font-size:15px;
+}
+
+thead th:scope{
+    background-color:orange;
+}
+thead  th:scope{
+    background-color:orange;
+}
+caption{
+    font-size: 50px;
+    font-style: oblique;
+}
+
+/* .ariをホバーすると.tooltiptextの値が表示される*/
+.ari{
+    background-color:#fbfbbc;
+    cursor: pointer;
+}
+
+.ari:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    font-size: 15px;
+}
+
+/* .tooltiptextを小ウィンドウで表示*/
+.tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: none;
+}
+
