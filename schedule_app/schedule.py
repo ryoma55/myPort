@@ -33,11 +33,11 @@ newSchedule = {key:form[key] for key in util.period_array()}
 
 if not quarter:
     quarter = util.now_quarter()
-user = operation_db.select_user(int(1))
+user = operation_db.select_user(number)
 if newSchedule['Mon1'] != None:
     print("OK")
     operation_db.save_sch(number,newquarter,newSchedule)
-a,schedule = operation_db.select_sch(int(1),quarter)
+a,schedule = operation_db.select_sch(number,quarter)
 
 #htmlを出力
 h.char_encode()
