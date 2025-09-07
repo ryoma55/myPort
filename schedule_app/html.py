@@ -1,6 +1,6 @@
 class Html:
     def __init__(self):
-        self.url = "http://172.17.157.119/schedule_app/ver.2.0/"
+        self.url = "Please_put_server_html_path"
         self.week = ['月','火','水','木','金','土']
         self.quarters = ['Q1', 'Q2', 'Q3', 'Q4']
         self.grade = ['3', '4', 'M1', 'M2', 'その他']
@@ -43,7 +43,7 @@ class Html:
     def print_menu(self):
         print("""<header>
         <ul class = \"tag\">
-        <li><a herf=\"train2.html\">時間割管理Web</a></li>
+        <li><a>時間割管理Web</a></li>
         <li><a class='menu' href = \"./home.py\">Home</a></li>
         <li><a class='menu' href = \"./user.py\">ユーザ一覧</a></li>
         </ul>
@@ -115,6 +115,3 @@ class Html:
 
     def make_table_tail(self):
         return '</table>'
-
-
-    

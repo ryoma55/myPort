@@ -3,11 +3,11 @@
 
 import sqlite3
 from contextlib import closing
-from common import array_make
+from util import array_make
 
 
 class OperationDB:
-    def __init__(self,dbname = '/var/www/db/schedule.db'):
+    def __init__(self,dbname = 'Please_put_DB_address'):
         self.dbname = dbname
         self.create_user()
         self.create_quarter()
@@ -42,7 +42,7 @@ class OperationDB:
         
     #データベースの作成
     def create_db(self):
-        create_table = '''create table if not exists user(id integer primary key, name varchar(8), grade varchar(3))\
+        create_table = '''create table if not exists user(id integer primary key, name varchar(8), grade varchar(3)\
             Mon1 integer default 0,
             Mon2 integer default 0,
             Mon3 integer default 0,
@@ -199,12 +199,10 @@ Wen5, Thu1, Thu2, Thu3, Thu4, Thu5, Fri1, Fri2, Fri3, Fri4, Fri5, Sat1, Sat2, Sa
     #編集しているユーザの時間割情報を取得
     def select_sch(self, num,quarter):
 
-        select_sql = 'SELECT * FROM {} WHERE id = {}'.format(quarter, num)
-
-        for row in self.excute_sql(select_sql, True):
-            pass
-        row2 = array_make(row[1:])
-        return row[0],row2
+        select_sql = f"SELECT * FROM {quarter} WHERE id = {num}"
+        row2=[]
+        for row in self.excute_sql(select_sql, returns=True):
+            return row[0],array_make(row[1:])
 
 
     #選択されたユーザの情報を取得
@@ -212,8 +210,7 @@ Wen5, Thu1, Thu2, Thu3, Thu4, Thu5, Fri1, Fri2, Fri3, Fri4, Fri5, Sat1, Sat2, Sa
         select_sql = 'SELECT * FROM user WHERE id = {}'.format(user_id)
         for row in self.excute_sql(select_sql, True):
             pass
-        user = row
-        return user
+        return row
 
 
     def get_name(self,user_id):
@@ -224,5 +221,3 @@ Wen5, Thu1, Thu2, Thu3, Thu4, Thu5, Fri1, Fri2, Fri3, Fri4, Fri5, Sat1, Sat2, Sa
         for row in self.excute_sql(select_sql, True):
             name.append(row[0])
         return name
-
-

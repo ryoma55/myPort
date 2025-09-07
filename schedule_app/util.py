@@ -15,7 +15,6 @@ def now_quarter():
             return key
     return "Q1"  # Default to Q4 if no match found
 
-
 def period_array():
     week = ['Mon','Tue','Wen','Thu','Fri','Sat']
     schedule = []
@@ -36,3 +35,6 @@ def array_make(array):
             week.append(day)
             day = []
     return week
+
+if __name__ == "__main__":
+    print(now_quarter())

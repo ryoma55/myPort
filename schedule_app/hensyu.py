@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding:UTF-8 -*-
 
-import common
+import util
 from html import Html
 from operation_db import OperationDB
 
@@ -36,7 +36,7 @@ form = hensyu.get_form(['number','quarter'])
 number = form['number']
 quarter = form['quarter']
 if not quarter:
-    quarter = common.now_quarter()
+    quarter = util.now_quarter()
 num,schedule = operation_db.select_sch(number,quarter)
 print(num,schedule)
     
@@ -60,6 +60,3 @@ print(hensyu.make_button("number",number,"戻る"))
 print("</div>")
 print(hensyu.make_table_tail())
 hensyu.print_tail()
-
-
-
