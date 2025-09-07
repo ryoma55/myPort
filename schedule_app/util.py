@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding:UTF-8 -*-
+
 def now_quarter():
     import datetime
     now = datetime.datetime.now()

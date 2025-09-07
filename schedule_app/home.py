@@ -1,16 +1,6 @@
 #!/usr/bin/python3
 # -*- coding:UTF-8 -*-
 
-import common
-from html import Html
-from operation_db import OperationDB
-
-operation_db = OperationDB()
-home = Html()    
-
-#時間割表を出力#!/usr/bin/python3
-# -*- coding:UTF-8 -*-
-
 import util
 from html import Html
 from operation_db import OperationDB

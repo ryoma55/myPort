@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding:UTF-8 -*-
+
 class Html:
     def __init__(self):
         self.url = "Please_put_server_html_path"
